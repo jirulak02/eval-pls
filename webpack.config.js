@@ -12,9 +12,10 @@ module.exports = (env, argv) => {
 			index: path.resolve(__dirname, "src/index.js"),
 		},
 		output: {
-			path: path.resolve(__dirname, "dist"),
+			path: path.resolve(__dirname, "public"),
 			filename: "[name].[contenthash].js",
 			clean: true,
+			publicPath: "/",
 			assetModuleFilename: "assets/[name][ext][query]",
 		},
 		module: {
@@ -48,9 +49,16 @@ module.exports = (env, argv) => {
 				filename: "[name].[contenthash].css",
 			}),
 			new HtmlWebpackPlugin({
+				filename: "index.html",
 				template: path.resolve(__dirname, "src/index.html"),
 				favicon: path.resolve(__dirname, "src/assets/favicon.png"),
 			}),
+			// ...["test1", "test2"].map((page) => {
+			// 	return new HtmlWebpackPlugin({
+			// 		filename: `${page}.html`,
+			// 		template: path.resolve(__dirname, `src/${page}.html`),
+			// 	});
+			// }),
 		],
 	};
 
@@ -101,15 +109,6 @@ module.exports = (env, argv) => {
 		...commonConfig,
 		mode: "development",
 		devtool: "source-map",
-		devServer: {
-			static: {
-				directory: path.resolve(__dirname, "dist"),
-			},
-			port: 3000,
-			open: true,
-			hot: true,
-			compress: true,
-			historyApiFallback: true,
-		},
+		stats: "errors-only",
 	};
 };
