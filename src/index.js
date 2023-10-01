@@ -1,3 +1,3 @@
 import "./styles.css";
-import "htmx.org"; // maybe not needed?
+import "htmx.org";
 window.htmx = require("htmx.org");

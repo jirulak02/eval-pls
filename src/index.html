@@ -6,6 +6,15 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<h1>Hello World!</h1>
+		<h1>
+			This is the code behind
+			<a href="https://htmx.org/examples/click-to-edit/" target="_blank">this HTMX example</a>
+		</h1>
+		<div hx-target="this" hx-swap="outerHTML">
+			<div><label>First Name</label>: Joe</div>
+			<div><label>Last Name</label>: Blow</div>
+			<div><label>Email Address</label>: joe@blow.com</div>
+			<button hx-get="/contact/1/edit">Click To Edit</button>
+		</div>
 	</body>
 </html>
