@@ -7,3 +7,10 @@ public
 # security
 .env
 .env*.local
+
+# test and debug
+npm-debug.log*
+junit.xml
+
+# misc
+.DS_Store
