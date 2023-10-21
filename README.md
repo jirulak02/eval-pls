@@ -1,4 +1,4 @@
-# Eval-pls - 2023
+# eval-pls - 2023
 
 ## Requirements
 
@@ -11,7 +11,7 @@
 Clone this repository:
 
 ```bash
-git clone git@github.com:jirulak02/Eval-pls.git
+git clone git@github.com:jirulak02/eval-pls.git
 ```
 
 ## Installation
